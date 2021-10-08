@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  
+  background: url("img\\Grupo39.jpg") no repeat center top;
+  background-size: cover;
+  font-family: Arial;
+  height: 100vh;
+  width:100vw;
+  
+}
+.encabezado {
+  width: auto;
+  height: 85px;
+  background-color: rgb(7, 7, 7);
+  margin: 10px;
+  margin-top: 20px;
+  padding: 0px 0px;
+  color: rgb(5, 5, 5);
+}
+.encabezadoimagen {
+  width: 75px;
+  height: 100px;
+  margin-top: -20px;
+  margin-left: 5rem;
+}
+.form-login {
+  font: bold 120% Arial;
+  width: 340px;
+  height: 450px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  margin-top: 130px;
+  margin-left: 5rem;
+  box-shadow: 7px 13px 10px rgb(0, 0, 0);
+  padding: 30px 30px;
+  color: rgb(5, 5, 5);
+}
+.imagelogin {
+  width: 40px;
+  height: 60px;
+}
+.form-login h5 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+.encabezado h4 {
+  font: bold 120% Arial;
+  margin: auto;
+  text-align: left;
+  height: 40px;
+  margin-left: 10rem;
+  margin-bottom: -40px;
+  background-color: rgb(0, 0, 0);
+  font-size: 20px;  
+  color: rgb(250, 250, 250);
+}
+
+.controls {
+  width: 100%;
+  border: 1px solid #707070;
+  margin-bottom: 35px;
+  padding: 11px 15px;
+  display: block;
+  background: rgb(255, 255, 255);
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+}
+.buttons {
+  width: 100%;
+  height: 40px;
+  background: black;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black;
+}

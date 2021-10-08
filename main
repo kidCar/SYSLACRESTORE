@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 92c794d5e6c78fecfd54179d63e1d7fc980cea0c Carlos Mondragon (EIS) <carlos.mondragon@eisla.local> 1630955090 -0500	commit (initial): initial commit
+92c794d5e6c78fecfd54179d63e1d7fc980cea0c 97e953f1c0ed09be71b89d1daeca31927cd45fe4 Carlos Mondragon (EIS) <carlos.mondragon@eisla.local> 1631743715 -0500	commit: FrontSisla
+97e953f1c0ed09be71b89d1daeca31927cd45fe4 97e953f1c0ed09be71b89d1daeca31927cd45fe4 Carlos <teccarlosd@gmail.com> 1632761902 -0500	Branch: renamed refs/heads/master to refs/heads/main
+97e953f1c0ed09be71b89d1daeca31927cd45fe4 97e953f1c0ed09be71b89d1daeca31927cd45fe4 Carlos <teccarlosd@gmail.com> 1632761941 -0500	Branch: renamed refs/heads/main to refs/heads/main
+97e953f1c0ed09be71b89d1daeca31927cd45fe4 97e953f1c0ed09be71b89d1daeca31927cd45fe4 Carlos <teccarlosd@gmail.com> 1632761945 -0500	Branch: renamed refs/heads/main to refs/heads/main
+97e953f1c0ed09be71b89d1daeca31927cd45fe4 83448a7041405953285c22ee34a1f6271d8e4075 Carlos <teccarlosd@gmail.com> 1632762114 -0500	commit: first commit
+83448a7041405953285c22ee34a1f6271d8e4075 83448a7041405953285c22ee34a1f6271d8e4075 Carlos <teccarlosd@gmail.com> 1632762123 -0500	Branch: renamed refs/heads/main to refs/heads/main
+83448a7041405953285c22ee34a1f6271d8e4075 7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b Carlos <teccarlosd@gmail.com> 1633541511 -0500	commit: first commit
+7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b 7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b Carlos <teccarlosd@gmail.com> 1633541512 -0500	Branch: renamed refs/heads/main to refs/heads/main
+7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b 7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b Carlos <teccarlosd@gmail.com> 1633541544 -0500	Branch: renamed refs/heads/main to refs/heads/main
+7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b 0a5382d1201a37fae5871f01408e7c092a25dacf Carlos <teccarlosd@gmail.com> 1633541620 -0500	commit: first commit
+0a5382d1201a37fae5871f01408e7c092a25dacf 0a5382d1201a37fae5871f01408e7c092a25dacf Carlos <teccarlosd@gmail.com> 1633541620 -0500	Branch: renamed refs/heads/main to refs/heads/main
+0a5382d1201a37fae5871f01408e7c092a25dacf 5b69e01552d0857d1e78fd1fccbef95d51bb966b Carlos <teccarlosd@gmail.com> 1633541733 -0500	commit: first commit
+5b69e01552d0857d1e78fd1fccbef95d51bb966b 5b69e01552d0857d1e78fd1fccbef95d51bb966b Carlos <teccarlosd@gmail.com> 1633541738 -0500	Branch: renamed refs/heads/main to refs/heads/main
+5b69e01552d0857d1e78fd1fccbef95d51bb966b 5b69e01552d0857d1e78fd1fccbef95d51bb966b Carlos <teccarlosd@gmail.com> 1633542172 -0500	Branch: renamed refs/heads/main to refs/heads/main
+5b69e01552d0857d1e78fd1fccbef95d51bb966b 5b69e01552d0857d1e78fd1fccbef95d51bb966b Carlos <teccarlosd@gmail.com> 1633542216 -0500	Branch: renamed refs/heads/main to refs/heads/main
+5b69e01552d0857d1e78fd1fccbef95d51bb966b 0a5382d1201a37fae5871f01408e7c092a25dacf Carlos <teccarlosd@gmail.com> 1633543298 -0500	reset: moving to HEAD~
+0a5382d1201a37fae5871f01408e7c092a25dacf 7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b Carlos <teccarlosd@gmail.com> 1633545233 -0500	reset: moving to HEAD~
+7b9e0779da1e6d4c9ceefc4d21e056d1adca2f9b 83448a7041405953285c22ee34a1f6271d8e4075 Carlos <teccarlosd@gmail.com> 1633545304 -0500	reset: moving to HEAD~
+83448a7041405953285c22ee34a1f6271d8e4075 97e953f1c0ed09be71b89d1daeca31927cd45fe4 Carlos <teccarlosd@gmail.com> 1633545345 -0500	reset: moving to HEAD~
+97e953f1c0ed09be71b89d1daeca31927cd45fe4 92c794d5e6c78fecfd54179d63e1d7fc980cea0c Carlos <teccarlosd@gmail.com> 1633545611 -0500	reset: moving to HEAD~

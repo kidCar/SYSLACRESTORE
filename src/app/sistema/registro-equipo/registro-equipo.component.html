@@ -1,0 +1,396 @@
+<!DOCTYPE html>>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Loggin</title>
+
+    <!--<link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(panelprincipal)">-->
+  </head>
+
+  <body>
+    <div>
+      <section class="encabezado">
+        <!-- Encabezado de loggin-->
+        <h4>Control de Inventario Fijo EISLA</h4>
+        <img src="assets/img/Elkay.png" class="encabezadoimagen" />
+      </section>
+    </div>
+    <!--Panel desplegable-->
+    <div id="sidemenu" class="menu-collapsed">
+      <!--HEADER-->
+      <div id="header">
+        <div id="title"><span>Home Eisla</span></div>
+        <div id="menu-btn">
+          <div id="photo">
+            <img src="assets/img/Grupo 1.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!--PROFILE-->
+      <div id="profile">
+        <div id="photo">
+          <img src="assets/img/Icon awesome-user-circle.png" alt="" />
+        </div>
+        <div id="name"><span>Bienvenido</span></div>
+      </div>
+      <!--ITEMS-->
+      <div id="menu-items">
+        <div class="item">
+          <a href="">
+            <div class="icon">
+              <img src="assets/img/Icon awesome-home.png" alt="" />
+            </div>
+            <div class="title"><span>EISATLA</span></div>
+          </a>
+        </div>
+        <div class="item separator"></div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="/personal-control">
+              <div class="icon">
+                <img src="assets/img/Icon simple-roots.png" alt="" />
+              </div>
+              <div class="title"><span>Usuarios</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="/registro-equipo">
+              <div class="icon">
+                <img src="assets/img/Icon material-done-all.png" alt="" />
+              </div>
+              <div class="title"><span>Asignacion de Equipo</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="">
+              <div class="icon">
+                <img src="assets/img/Icon awesome-piggy-bank.png" alt="" />
+              </div>
+              <div class="title"><span>Inventario</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="">
+              <div class="icon">
+                <img src="assets/img/Icon awesome-pager.png" alt="" />
+              </div>
+              <div class="title"><span>Reportes</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="">
+              <div class="icon">
+                <img src="assets/img/Icon awesome-codepen.png" alt="" />
+              </div>
+              <div class="title"><span>Departamentos</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="">
+              <div class="icon">
+                <img src="assets/img/Icon material-security.png" alt="" />
+              </div>
+              <div class="title"><span>Caseta de Vigilancia</span></div>
+            </a>
+          </div>
+          <div class="item separator"></div>
+        </div>
+      </div>
+    </div>
+    <!--<div id="main-container">hola a todes</div>-->
+    <!-- SLASH MAIN--->
+    <!--Inico del form
+    <h1>Línea horizontal con CSS</h1>
+    <a href="//parzibyte.me/blog">By Parzibyte</a>
+    <div class="linea"></div>
+    <hr>-->
+
+    <section class="container">
+      <h6 class="text-center">Registrar</h6>
+      <h1></h1>
+      <h4>
+        Informacion Basica &nbsp;
+        <img src="assets/img/Icon awesome-laptop-code.png" alt="" />
+      </h4>
+
+      <form
+        autocomplete="off"
+        class="row g-3"
+        novalidate
+        #form="ngForm"
+        (submit)="onSubmit(form)"
+      >
+        <div>
+          <input
+            type="hidden"
+            name="equipmentId"
+            [value]="service.formData.equipmentId"
+          />
+        </div>
+        <div class="col-md-5">
+          <label for="inputEmail4" class="form-label">Nombre de equipo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputEmail4"
+            placeholder="Nombre del equipo"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="service.formData.name"
+            required
+            maxlength="10"
+            minlength="5"
+            required
+            [class.invalid]="name.invalid && name.touched"
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="inputPassword4" class="form-label">Numero de Serie</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="N.serie"
+            id="inputPassword4"
+            name="nserie"
+            #nserie="ngModel"
+            [(ngModel)]="service.formData.nserie"
+          />
+        </div>
+        <div class="col-md-3">
+          <label for="inputAddress" class="form-label">Modelo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress"
+            placeholder="Modelo"
+            name="model"
+            #model="ngModel"
+            [(ngModel)]="service.formData.model"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputAddress2" class="form-label">IMEI</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress2"
+            placeholder="imei del equipo"
+            name="imei"
+            #imei="ngModel"
+            [(ngModel)]="service.formData.imei"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Equipo Nuevo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="equipmentstock"
+            #equipmentstock="ngModel"
+            [(ngModel)]="service.formData.equipmentstock"
+          />
+        </div>
+        <div class="col-md-8">
+          <label for="inputState" class="form-label">Categoria:</label>
+          <select
+            id="inputState"
+            class="form-select"
+            name="category"
+            #category="ngModel"
+            [(ngModel)]="service.formData.category"
+          >
+            <option selected>Selecciona la categoria...</option>
+            <option>Pc-Desktop</option>
+            <option>Laptop</option>
+            <option>SmartPhone</option>
+            <option>Monitor</option>
+            <option>Impresora</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputZip" class="form-label"
+            >Cantidad en Asignación</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="inputZip"
+            name="allasigned"
+            #allasigned="ngModel"
+            [(ngModel)]="service.formData.allasigned"
+          />
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label" for="gridCheck">
+              Accesorios Asignados
+            </label>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Descripcion del equipo</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              name="carctetis"
+              #carctetis="ngModel"
+              [(ngModel)]="service.formData.carctetis"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
+            Registrar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!--END SLASH<div class="item footer">footer</div>-->
+
+    <p></p>
+    <div class="card w-75">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h3>Equipo Registrado</h3>
+        <a type="submit" class="btn btn-dark float-right">Generar Reporte</a>
+      </div>
+      <!--
+      <div class="card-body d-flex justify-content-between align-items-center">
+        Lista de Etiquetas
+        <a href="#" class="btn btn-primary btn-sm">Crear</a>-->
+
+      <div class="card-body text-center">
+        <section>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">N.lista</th>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">No.Serie</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">IMEI</th>
+                <th scope="col">Disponible</th>
+                <th scope="col">Asignado</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pd of service.list; let index = index">
+                <th cope="row">{{ index + 1 }}</th>
+                <th (click)="populateForm(pd)">{{ pd.equipmentId }}</th>
+                <td (click)="populateForm(pd)">{{ pd.name }}</td>
+                <td (click)="populateForm(pd)">{{ pd.model }}</td>
+                <td (click)="populateForm(pd)">{{ pd.nserie }}</td>
+                <td (click)="populateForm(pd)">{{ pd.category }}</td>
+                <td (click)="populateForm(pd)">
+                  <a href="/registro-equipo">ver codigo</a>
+                </td>
+                <td (click)="populateForm(pd)">{{ pd.imei }}</td>
+                <td (click)="populateForm(pd)">{{ pd.equipmentstock }}</td>
+                <td (click)="populateForm(pd)">{{ pd.allasigned }}</td>
+                <!--omtimos caractristicas
+                     <td>{{pd.carctetis}}</td>-->
+                <td>
+                  <i (click)="populateForm(pd)" class="fas fa-pen"></i
+                  >&nbsp;&nbsp;&nbsp;&nbsp;<i
+                    (click)="onDelete(pd.equipmentId)"
+                    class="fas fa-trash"
+                  ></i>
+                </td>
+              </tr>
+              <!--<td colspan="2">Larry the Bird</td>-->
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+    <!--<div class="full-width panel mdl-shadow--2dp">
+  <div class="full-width panel-tittle bg-success text-center tittles">
+    List Administrator
+  </div>
+  <div class="full-width panel-content">
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable is-upgraded" data-upgraded=",MaterialTextfield">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin" data-upgraded=",MaterialButton">
+          <i class="zmdi zmdi-search"></i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="searchAdmin">
+          <label class="mdl-textfield__label"></label>
+        </div>
+      </div>
+    </form>
+    <div class="mdl-list">
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>1. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>2. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>3. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>4. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>5. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+    </div>
+  </div>
+</div>-->
+  </body>
+</html>
