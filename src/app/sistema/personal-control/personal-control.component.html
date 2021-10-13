@@ -137,7 +137,7 @@
         <div>
           <input
             type="hidden"
-            name="equipmentDetailId"
+            vname="equipmentId"
             [value]="service.formData.equipmentId"
           />
           <!--declaracion value-->
@@ -223,7 +223,7 @@
             <option>Impresora</option>
           </select>
         </div>
-        <div class="col-md-4">
+       <!-- <div class="col-md-4">
           <label for="inputZip" class="form-label"
             >Cantidad en Asignación</label
           >
@@ -235,7 +235,7 @@
             #allasigned="ngModel"
             [(ngModel)]="service.formData.allasigned"
           />
-        </div>
+        </div>-->
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck" />
@@ -251,7 +251,7 @@
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
-              name="model"
+              name="carctetis"
               #carctetis="ngModel"
               [(ngModel)]="service.formData.carctetis"
             ></textarea>
@@ -301,7 +301,7 @@
             <tbody>
               <tr *ngFor="let pd of service.list; let index = index">
                 <th cope="row">{{ index + 1 }}</th>
-                <th (click)="populateForm(pd)" >{{ pd.equipmentDetailId }}</th>
+                <th (click)="populateForm(pd)" >{{ pd.equipmentId }}</th>
                 <td (click)="populateForm(pd)">{{ pd.name }}</td>
                 <td (click)="populateForm(pd)">{{ pd.model }}</td>
                 <td (click)="populateForm(pd)">{{ pd.nserie }}</td>
@@ -315,7 +315,7 @@
                 <td>
                   <i (click)="populateForm(pd)" class="fas fa-pen"></i
                   >&nbsp;&nbsp;&nbsp;&nbsp;<i
-                    (click)="onDelete(pd.equipmentDetailId)"
+                    (click)="onDelete(pd.equipmentId)"
                     class="fas fa-trash"
                   ></i>
                 </td>

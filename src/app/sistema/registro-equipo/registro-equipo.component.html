@@ -223,11 +223,11 @@
             <option>Impresora</option>
           </select>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <label for="inputZip" class="form-label"
             >Cantidad en Asignación</label
           >
-          <input
+          <1--<input
             type="text"
             class="form-control"
             id="inputZip"
@@ -235,31 +235,59 @@
             #allasigned="ngModel"
             [(ngModel)]="service.formData.allasigned"
           />
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Accesorios Asignados
-            </label>
-          </div>
+        </div>-->
+        <!--descripcion del equipo-->
+        <div class="col-md-6">
+          <div class="form-check"></div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label"
-              >Descripcion del equipo</label
+              >Caracteristicas</label
             >
             <textarea
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
+              placeholder="Agrega descripcion del equipo..."
               name="carctetis"
               #carctetis="ngModel"
               [(ngModel)]="service.formData.carctetis"
             ></textarea>
           </div>
         </div>
+        <!--descripcion del equipo-->
+        <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label" for="gridCheck">
+              Accesorios Predeterminados
+            </label>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Describe los Accesorios:
+            </label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Agrega descripcion de los Accesorios..."
+              name="accesories"
+              #accesories="ngModel"
+              [(ngModel)]="service.formData.accesories"
+            ></textarea>
+          </div>
+        </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
-            Registrar
+            Registrar</button
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          <button
+            type="reset"
+            class="btn btn-dark"
+            (click)="(resetForm)"
+            [disabled]="form.invalid"
+          >
+            Cancelar
           </button>
         </div>
       </form>
@@ -301,22 +329,27 @@
             <tbody>
               <tr *ngFor="let pd of service.list; let index = index">
                 <th cope="row">{{ index + 1 }}</th>
-                <th (click)="populateForm(pd)">{{ pd.equipmentId }}</th>
-                <td (click)="populateForm(pd)">{{ pd.name }}</td>
-                <td (click)="populateForm(pd)">{{ pd.model }}</td>
-                <td (click)="populateForm(pd)">{{ pd.nserie }}</td>
-                <td (click)="populateForm(pd)">{{ pd.category }}</td>
-                <td (click)="populateForm(pd)">
-                  <a href="/registro-equipo">ver codigo</a>
-                </td>
-                <td (click)="populateForm(pd)">{{ pd.imei }}</td>
-                <td (click)="populateForm(pd)">{{ pd.equipmentstock }}</td>
-                <td (click)="populateForm(pd)">{{ pd.allasigned }}</td>
-                <!--omtimos caractristicas
+                <th>{{ pd.equipmentId }}</th>
+                <td>{{ pd.name }}</td>
+                <td>{{ pd.model }}</td>
+                <td>{{ pd.nserie }}</td>
+                <td>{{ pd.category }}</td>
+                <td><a [href]="fileUrl" download="QRCode.txt">
+                  <qrcode #codigoqr [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
+                </a></td>
+                <td>{{ pd.imei }}</td>
+                <td>{{ pd.equipmentstock }}</td>
+                <td><a href="/registro-equipo">ver codigo</a></td>
+                <!--omtimos caractristicas <td>{{ pd.allasigned }}</td>
                      <td>{{pd.carctetis}}</td>-->
                 <td>
-                  <i (click)="populateForm(pd)" class="fas fa-pen"></i
+                  <i
+                    type="submit"
+                    (click)="populateForm(pd)"
+                    class="fas fa-pen"
+                  ></i
                   >&nbsp;&nbsp;&nbsp;&nbsp;<i
+                    type="submit"
                     (click)="onDelete(pd.equipmentId)"
                     class="fas fa-trash"
                   ></i>
@@ -328,6 +361,10 @@
         </section>
       </div>
     </div>
+    <div>
+      <!--<ngx-qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></ngx-qrcode>-->
+    </div>
+
     <!--<div class="full-width panel mdl-shadow--2dp">
   <div class="full-width panel-tittle bg-success text-center tittles">
     List Administrator

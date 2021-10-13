@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { EquipmentDetail } from './equipment-detail.model';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class EquipmentDetailService {
   readonly baseURL = 'https://localhost:44346/api/EquipmentDetail';
   formData: EquipmentDetail = new EquipmentDetail();
   list: EquipmentDetail[];
-
+  
   constructor(private http: HttpClient) {}
 
   postPaymentDetail() {
@@ -31,6 +32,21 @@ export class EquipmentDetailService {
     this.http
       .get(this.baseURL)
       .toPromise()
-      .then((res) => (this.list = res as EquipmentDetail[]));
+      .then((res) => (this.list = res as EquipmentDetail[],
+        console.log(`resultado ${this.list}`)
+        )
+        
+        );
+
+      
+  }
+
+  registroslits():EquipmentDetail[]{
+   
+      return this.list;
+  }
+
+  ObtenerRegistros():Observable<any>{
+    return this.http.get<EquipmentDetail[]>(this.baseURL);
   }
 }

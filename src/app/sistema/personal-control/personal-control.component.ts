@@ -30,7 +30,7 @@ export class PersonalControlComponent implements OnInit {
       this.service.formData = new EquipmentDetail();
     }
     onSubmit(form: NgForm) {
-      if (this.service.formData.equipmentId == 0)
+      if (this.service.formData.equipmentId ==0)// pude ser null o 0
         this.insertRecord(form);
       else
         this.updateRecord(form);

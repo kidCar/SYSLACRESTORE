@@ -12,8 +12,9 @@ import { RegistroEquipoComponent } from './sistema/registro-equipo/registro-equi
 import { HttpClientModule } from '@angular/common/http';
 import { EquipmentDetailsComponent } from './sistema/equipment-details/equipment-details.component';
 import { PersonalControlComponent } from './sistema/personal-control/personal-control.component';
-
-
+import { QRCodeElementType } from 'angularx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode';
+import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PersonalControlComponent } from './sistema/personal-control/personal-co
     LoginComponent,
     RegistroEquipoComponent,
     EquipmentDetailsComponent,
-    PersonalControlComponent,   
+    PersonalControlComponent,
+    AsigmentEquipComponent,   
     //EquipmentDetailsComponent
   ],
   imports: [
@@ -30,7 +32,9 @@ import { PersonalControlComponent } from './sistema/personal-control/personal-co
     AppRoutingModule,
     app_routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    QRCodeModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
