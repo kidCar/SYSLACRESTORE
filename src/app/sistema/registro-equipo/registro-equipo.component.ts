@@ -14,45 +14,39 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 export class RegistroEquipoComponent implements OnInit {
   public myAngularxQrCode: string = null;
   public fileUrl;
+  data = [{
+    'name': 'John Doe',
+    'profile': 'Software Developer',
+    'email': 'john@doe.com',
+    'hobby': 'coding'
+  }]
 
-    lista:string[]=["hola","que","tal","estas"];
+  dataToString = JSON.stringify(this.data);
+    
   constructor(
     public service: EquipmentDetailService, 
     private sanitizer: DomSanitizer) {}
 
   //Codigo QR generado
- 
+  mostrarDAtos:Boolean;
 
-  ngOnInit(): void { 
+  ngOnInit(): void {     
+    this.lateralbar();
+
+    this.myAngularxQrCode = 'ID Equipo';  
     
-    this.myAngularxQrCode = 'ID Equipo';    
-    const data = 'ID Equipo';      
+    const data = 'ID Equipo' ;      
     const blob = new Blob([data], { type: 'application/octet-stream' });
     this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
-    
-    
-    const btn = document.querySelector('#menu-btn');
-    const menu = document.querySelector('#sidemenu');
-    btn.addEventListener('click', (e) => {
-      menu.classList.toggle('menu-expanded');
-      menu.classList.toggle('menu-collapsed');
-      document.querySelector('body').classList.toggle('body-expanded');
-    });
-    this.service.refreshList();    
+       
     //this.myAngularxQrCode ='you Qr code';    
     //Obtener lista desde el ng
     //this.service.refreshList();  
     //barra lateral ocultar 
-
-    
-
     // this.service.ObtenerRegistros()
     // .subscribe((respuesta : HttpResponse<EquipmentDetail[]>) => {
     //   console.log("respuesta: "+ respuesta.body);
     // });
-
-    
-    
   }
   resetForm(form: NgForm) {
     console.table(form.value);
@@ -68,6 +62,7 @@ export class RegistroEquipoComponent implements OnInit {
   }
   
   updateRecord(form: NgForm) {
+    
     this.service.putPaymentDetail().subscribe(
       res => {
         this.resetForm(form);        
@@ -107,6 +102,17 @@ export class RegistroEquipoComponent implements OnInit {
     this.service.formData = Object.assign({}, pd);
     console.table(pd)
   }
- 
-  
+ lateralbar(){
+  const btn = document.querySelector('#menu-btn');
+  const menu = document.querySelector('#sidemenu');
+  btn.addEventListener('click', (e) => {
+    menu.classList.toggle('menu-expanded');
+    menu.classList.toggle('menu-collapsed');
+    document.querySelector('body').classList.toggle('body-expanded');
+  });
+  this.service.refreshList();  
+ }
+ activarEdicion(){  
+  this.mostrarDAtos=true;//directiva *ngIf
+ }  
 }
