@@ -15,6 +15,7 @@ import { PersonalControlComponent } from './sistema/personal-control/personal-co
 import { QRCodeElementType } from 'angularx-qrcode';
 import { QRCodeModule } from 'angularx-qrcode';
 import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.component';
+import { GeneralReportComponent } from './sistema/general-report/general-report.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.
     RegistroEquipoComponent,
     EquipmentDetailsComponent,
     PersonalControlComponent,
-    AsigmentEquipComponent,   
+    AsigmentEquipComponent,
+    GeneralReportComponent,   
     //EquipmentDetailsComponent
   ],
   imports: [

@@ -6,6 +6,8 @@ import { RegistroEquipoComponent } from "./sistema/registro-equipo/registro-equi
 import { EquipmentDetail } from "./sistema/services/equipment-detail.model";
 import { EquipmentDetailsComponent } from './sistema/equipment-details/equipment-details.component';
 import { PersonalControlComponent } from "./sistema/personal-control/personal-control.component";
+import { GeneralReportComponent } from "./sistema/general-report/general-report.component";
+import { AsigmentEquipComponent } from "./sistema/asigment-equip/asigment-equip.component";
 
 
 const app_routes: Routes = [
@@ -14,6 +16,8 @@ const app_routes: Routes = [
     { path: 'registro-equipo', component: RegistroEquipoComponent},
     { path: 'asignar-equipo', component: EquipmentDetailsComponent},
     { path: 'personal-control', component: PersonalControlComponent},
+    { path: 'reportes-equipo', component: GeneralReportComponent},
+    {path: 'asignacion-de-equipo', component: AsigmentEquipComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'login'}
 
 ];

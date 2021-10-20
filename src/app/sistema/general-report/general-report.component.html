@@ -119,197 +119,8 @@
     <a href="//parzibyte.me/blog">By Parzibyte</a>
     <div class="linea"></div>
     <hr>-->
-      
-    <section class="container">
-      <h6 class="text-center">Registrar</h6>
-      <h1></h1>
-      <h4>
-        Informacion Basica &nbsp;
-        <img src="assets/img/Icon awesome-laptop-code.png" alt="" />
-      </h4>
 
-      <form 
-        autocomplete="off"
-        class="row g-3"
-        novalidate
-        #form="ngForm"
-        (submit)="onSubmit(form)"
-      >
-        <div>
-          <input
-            type="hidden"
-            name="equipmentId"
-            [value]="service.formData.equipmentId"
-          />
-         
-        </div>
-        <div class="col-md-5">
-          <label for="inputEmail4" class="form-label">Nombre de equipo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputEmail4"
-            placeholder="Nombre del equipo"
-            name="name"
-            #name="ngModel"
-            [(ngModel)]="service.formData.name"
-            required
-            maxlength="10"
-            minlength="5"
-            required
-            [class.invalid]="name.invalid && name.touched"
-          />
-        </div>
-        <div class="col-md-4">
-          <label for="inputPassword4" class="form-label">Numero de Serie</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="N.serie"
-            id="inputPassword4"
-            name="nserie"
-            #nserie="ngModel"
-            [(ngModel)]="service.formData.nserie"
-          />
-        </div>
-        <div class="col-md-3">
-          <label for="inputAddress" class="form-label">Modelo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress"
-            placeholder="Modelo"
-            name="model"
-            #model="ngModel"
-            [(ngModel)]="service.formData.model"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputAddress2" class="form-label">IMEI</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress2"
-            placeholder="imei del equipo"
-            name="imei"
-            #imei="ngModel"
-            [(ngModel)]="service.formData.imei"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Equipo Nuevo</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputCity"
-            name="equipmentstock"
-            #equipmentstock="ngModel"
-            [(ngModel)]="service.formData.equipmentstock"
-          />
-        </div>
-        <div class="col-md-6">
-          <label for="inputState" class="form-label">Categoria:</label>
-          <select
-            id="inputState"
-            class="form-select"
-            name="category"
-            #category="ngModel"
-            [(ngModel)]="service.formData.category">
-            <option selected>Selecciona la categoria...</option>
-            <option>Pc-Desktop</option>
-            <option>Laptop</option>
-            <option>SmartPhone</option>
-            <option>Monitor</option>
-            <option>Impresora</option>
-          </select>
-        </div>
-        <div class="col-md-4">
-          <label (click)="activarEdicion()" for="hidden" class="form-label">   </label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Accesorios Predeterminados
-            </label>
-          </div>
-        </div>
-        <!-- <div class="col-md-4">
-          <label for="inputZip" class="form-label"
-            >Cantidad en Asignación</label
-          >
-          <1--<input
-            type="text"
-            class="form-control"
-            id="inputZip"
-            name="allasigned"
-            #allasigned="ngModel"
-            [(ngModel)]="service.formData.allasigned"
-          />
-        </div>-->
-        <!--descripcion del equipo-->
-        <div class="col-md-5">
-          <!--<div class="form-check"></div>-->
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Caracteristicas</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="2"
-              placeholder="Agrega descripcion del equipo..."
-              name="carctetis"
-              #carctetis="ngModel"
-              [(ngModel)]="service.formData.carctetis"
-            ></textarea>
-          </div>
-        </div>
-        
-        <!--descripcion del equipo-->
-        <div class="col-md-4">
-         <!-- <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Accesorios Predeterminados
-            </label>
-          </div>-->
-          <div *ngIf="!mostrarDAtos" class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Describe los Accesorios:
-            </label>
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="2"
-              placeholder="Agrega descripcion de los Accesorios..."
-              name="accesories"
-              #accesories="ngModel"
-              [(ngModel)]="service.formData.accesories"
-            ></textarea>                        
-          </div>                    
-        </div>  
-        <div class="col-md-3">
-          <div class="form-check"></div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              ></label
-            >
-            </div>
-          <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
-            Registrar</button
-          >&nbsp;&nbsp;&nbsp;&nbsp;
-          <button
-            type="reset"
-            class="btn btn-dark"
-            (click)="(resetForm)"
-            [disabled]="form.invalid"
-          >
-            Cancelar
-          </button>
-        </div><p></p>  
-                    
-      </form> 
-           
-    </section>
+    
 
     <!--END SLASH<div class="item footer">footer</div>-->
 
@@ -353,7 +164,7 @@
                 <td>{{ pd.nserie }}</td>
                 <td>{{ pd.category }}</td>
                 <td><a [href]="fileUrl" download="QRCode.txt">
-                  <qrcode #codigoqr [qrdata]="pd.codigo" [size]="256" [level]="'M'"></qrcode>
+                  <qrcode #codigoqr [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
                 </a></td>
                 <td>{{ pd.imei }}</td>
                 <td>{{ pd.equipmentstock }}</td>
@@ -378,7 +189,74 @@
           </table>
         </section>
       </div>
-      
     </div>
+    <div>
+      <!--<ngx-qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></ngx-qrcode>-->
+    </div>
+
+    <!--<div class="full-width panel mdl-shadow--2dp">
+  <div class="full-width panel-tittle bg-success text-center tittles">
+    List Administrator
+  </div>
+  <div class="full-width panel-content">
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable is-upgraded" data-upgraded=",MaterialTextfield">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin" data-upgraded=",MaterialButton">
+          <i class="zmdi zmdi-search"></i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" id="searchAdmin">
+          <label class="mdl-textfield__label"></label>
+        </div>
+      </div>
+    </form>
+    <div class="mdl-list">
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>1. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>2. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>3. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>4. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+      <li class="full-width divider-menu-h"></li>
+      <div class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+          <span>5. Administrator name</span>
+          <span class="mdl-list__item-sub-title">DNI</span>
+        </span>
+        <a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
+      </div>
+    </div>
+  </div>
+</div>-->
   </body>
 </html>
