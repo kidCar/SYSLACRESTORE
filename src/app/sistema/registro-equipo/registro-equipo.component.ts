@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { EquipmentDetailService } from '../services/equipment-detail.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -14,14 +15,14 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 export class RegistroEquipoComponent implements OnInit {
   public myAngularxQrCode: string = null;
   public fileUrl;
-  data = [{
+  /* data = [{
     'name': 'John Doe',
     'profile': 'Software Developer',
     'email': 'john@doe.com',
     'hobby': 'coding'
   }]
 
-  dataToString = JSON.stringify(this.data);
+  dataToString = JSON.stringify(this.data); */
     
   constructor(
     public service: EquipmentDetailService, 
@@ -51,8 +52,8 @@ export class RegistroEquipoComponent implements OnInit {
   resetForm(form: NgForm) {
     console.table(form.value);
     form.form.reset();
-    this.service.formData = new EquipmentDetail();
-    
+    this.service.formData = new EquipmentDetail(); 
+    this.service.formData.equipmentId=0;  
   }
   onSubmit(form: NgForm) {
     if (this.service.formData.equipmentId == 0)

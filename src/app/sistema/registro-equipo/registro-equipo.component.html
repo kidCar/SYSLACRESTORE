@@ -137,7 +137,7 @@
       >
         <div>
           <input
-            type="hidden"
+            type="button"
             name="equipmentId"
             [value]="service.formData.equipmentId"
           />
@@ -300,7 +300,7 @@
           <button
             type="reset"
             class="btn btn-dark"
-            (click)="(resetForm)"
+            (click)="resetForm"            
             [disabled]="form.invalid"
           >
             Cancelar
