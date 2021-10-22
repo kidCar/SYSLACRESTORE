@@ -125,7 +125,7 @@
       <h1></h1>
       <h4>
         Informacion Basica &nbsp;
-        <img src="assets/img/Icon awesome-laptop-code.png" alt="" />
+        <img src="assets/img/Icon awesome-pencil-alt.png" alt="" />
       </h4>
 
       <form
@@ -138,91 +138,146 @@
         <div>
           <input
             type="hidden"
-            name="equipmentId"
-            [value]="service.formData.equipmentId"
+            name="userid"
+            [value]="service.formDataU.userid"
           />
         </div>
-        <div class="col-md-5">
-          <label for="inputEmail4" class="form-label">Nombre de equipo</label>
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Numero de Empleado</label>
           <input
             type="text"
             class="form-control"
             id="inputEmail4"
-            placeholder="Nombre del equipo"
-            name="name"
-            #name="ngModel"
-            [(ngModel)]="service.formData.name"
+            placeholder="No. Epmpleado"
+            name="dni"
+            #dni="ngModel"
+            [(ngModel)]="service.formDataU.dni"
             required
             maxlength="10"
             minlength="5"
             required
-            [class.invalid]="name.invalid && name.touched"
+            [class.invalid]="dni.invalid && dni.touched"
           />
         </div>
         <div class="col-md-4">
-          <label for="inputPassword4" class="form-label">Numero de Serie</label>
+          <label for="inputEmail4" class="form-label">Nombre:</label>
           <input
             type="text"
             class="form-control"
-            placeholder="N.serie"
+            id="inputEmail4"
+            placeholder="Nombre de Empleado"
+            name="nameuser"
+            #nameuser="ngModel"
+            [(ngModel)]="service.formDataU.nameuser"
+            required
+            maxlength="10"
+            minlength="5"
+            required
+            [class.invalid]="nameuser.invalid && nameuser.touched"
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="inputPassword4" class="form-label">Apellidos Paterno:</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ap. Paterno"
             id="inputPassword4"
-            name="nserie"
-            #nserie="ngModel"
-            [(ngModel)]="service.formData.nserie"
+            name="sur_paternal"
+            #sur_paternal="ngModel"
+            [(ngModel)]="service.formDataU.sur_paternal"
           />
         </div>
         <div class="col-md-3">
-          <label for="inputAddress" class="form-label">Modelo</label>
+          <label for="inputAddress" class="form-label">Apellido Materno:</label>
           <input
             type="text"
             class="form-control"
             id="inputAddress"
-            placeholder="Modelo"
-            name="model"
-            #model="ngModel"
-            [(ngModel)]="service.formData.model"
+            placeholder="Ap-Materno"
+            name="sur_maternal"
+            #sur_maternal="ngModel"
+            [(ngModel)]="service.formDataU.sur_maternal"
           />
         </div>
         <div class="col-md-6">
-          <label for="inputAddress2" class="form-label">IMEI</label>
+          <label for="inputAddress2" class="form-label">Telefono:</label>
           <input
             type="text"
             class="form-control"
             id="inputAddress2"
-            placeholder="imei del equipo"
-            name="imei"
-            #imei="ngModel"
-            [(ngModel)]="service.formData.imei"
+            placeholder="Ejemplo (5542320932)"
+            name="tel"
+            #tel="ngModel"
+            [(ngModel)]="service.formDataU.tel"
           />
         </div>
         <div class="col-md-6">
-          <label for="inputCity" class="form-label">Equipo Nuevo</label>
+          <label for="inputCity" class="form-label">Correo:</label>
           <input
             type="text"
             class="form-control"
+            placeholder="email"
             id="inputCity"
-            name="equipmentstock"
-            #equipmentstock="ngModel"
-            [(ngModel)]="service.formData.equipmentstock"
+            name="Email"
+            #email="ngModel"
+            [(ngModel)]="service.formDataU.email"
           />
         </div>
-        <div class="col-md-8">
-          <label for="inputState" class="form-label">Categoria:</label>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Departamento:</label>
           <select
             id="inputState"
             class="form-select"
-            name="category"
-            #category="ngModel"
-            [(ngModel)]="service.formData.category"
+            name="departament"
+            #departament="ngModel"
+            [(ngModel)]="service.formDataU.departament"
           >
-            <option selected>Selecciona la categoria...</option>
-            <option>Pc-Desktop</option>
-            <option>Laptop</option>
-            <option>SmartPhone</option>
-            <option>Monitor</option>
-            <option>Impresora</option>
+            <option selected>Selecciona el Departamento...</option>
+            <option>280-Recursos Himanos</option>
+            <option>281-TI</option>
+            <option>282-Seguridad</option>
+            <option>283-Nominas</option>
+            <option>Mas...</option>
           </select>
         </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Puesto :</label>
+          <select
+            id="inputState"
+            class="form-select"
+            name="puesto"
+            #puesto="ngModel"
+            [(ngModel)]="service.formDataU.puesto"
+          >
+            <option selected>Selecciona el puesto...</option>
+            <option>Gerenete</option>
+            <option>Direcctor</option>
+            <option>Coordinador</option>
+            <option>Practicante</option>
+            <option>Mas...</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <div class="form-check"></div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              ></label
+            >
+            </div>
+          <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
+            Registrar</button
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <button
+            type="reset"
+            class="btn btn-dark"
+            (click)="(resetForm)"
+            [disabled]="form.invalid"
+          >
+            Cancelar
+          </button> 
+        </div><p></p> 
         <!-- <div class="col-md-4">
           <label for="inputZip" class="form-label"
             >Cantidad en Asignación</label
@@ -237,62 +292,12 @@
           />
         </div>-->
         <!--descripcion del equipo-->
-        <div class="col-md-6">
-          <div class="form-check"></div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Caracteristicas</label
-            >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              placeholder="Agrega descripcion del equipo..."
-              name="carctetis"
-              #carctetis="ngModel"
-              [(ngModel)]="service.formData.carctetis"
-            ></textarea>
-          </div>
-        </div>
-        <!--descripcion del equipo-->
-        <div class="col-md-6">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Accesorios Predeterminados
-            </label>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"
-              >Describe los Accesorios:
-            </label>
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              placeholder="Agrega descripcion de los Accesorios..."
-              name="accesories"
-              #accesories="ngModel"
-              [(ngModel)]="service.formData.accesories"
-            ></textarea>
-          </div>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
-            Registrar</button
-          >&nbsp;&nbsp;&nbsp;&nbsp;
-          <button
-            type="reset"
-            class="btn btn-dark"
-            (click)="(resetForm)"
-            [disabled]="form.invalid"
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
+        
+         
+                    
+      </form> 
+           
     </section>
-
     <!--END SLASH<div class="item footer">footer</div>-->
 
     <p></p>
@@ -300,7 +305,7 @@
       <div
         class="card-header d-flex justify-content-between align-items-center"
       >
-        <h3>Equipo Registrado</h3>
+        <h3>Personal con Asignación</h3>
         <a type="submit" class="btn btn-dark float-right">Generar Reporte</a>
       </div>
       <!--
@@ -314,14 +319,14 @@
             <thead>
               <tr>
                 <th scope="col">N.lista</th>
-                <th scope="col">Id</th>
+                <th scope="col">No. Empleado</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Modelo</th>
-                <th scope="col">No.Serie</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Codigo</th>
-                <th scope="col">IMEI</th>
-                <th scope="col">Disponible</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Depto</th>
+                <th scope="col">Puesto</th>
+                <th scope="col">Equipos</th>
                 <th scope="col">Asignado</th>
                 <th scope="col">Opciones</th>
               </tr>

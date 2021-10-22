@@ -11,7 +11,7 @@ import { EquipmentDetailService } from '../services/equipment-detail.service';
 export class AsigmentEquipComponent implements OnInit {
 
   constructor(public service: EquipmentDetailService) { }
-
+  mostrarDAtos:Boolean;
   ngOnInit(): void {
     const btn = document.querySelector('#menu-btn');
     const menu = document.querySelector('#sidemenu');
@@ -75,5 +75,7 @@ export class AsigmentEquipComponent implements OnInit {
     this.service.formData = Object.assign({}, pd);
     console.table(pd)
   }
-
+  activarEdicion(){  
+    this.mostrarDAtos=true;//directiva *ngIf
+   }  
 }

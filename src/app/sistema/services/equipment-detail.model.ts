@@ -16,11 +16,13 @@ export class EquipmentAsignation {
   allasigned: null;
 }
 export class UsersUpdate{
-  dni:number=0;
+  userid: number=0;
+  dni:null;
   nameuser: null;
   sur_paternal: null;
   sur_maternal: null;
   direction: null;
+  tel: null;
   email: null;
   departament: null;
   puesto: null;

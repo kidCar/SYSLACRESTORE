@@ -121,11 +121,11 @@
     <hr>-->
 
     <section class="container">
-      <h6 class="text-center">Registrar</h6>
-      <h1></h1>
+     
+      <h1> <h6 class="text-center">Nuevo</h6></h1>
       <h4>
         Informacion Basica &nbsp;
-        <img src="assets/img/Icon awesome-laptop-code.png" alt="" />
+        <img src="assets/img/Icon awesome-user-plus.png" alt="" />
       </h4>
 
       <form novalidate
@@ -142,8 +142,8 @@
           />
           <!--declaracion value-->
         </div>
-        <div class="col-md-5">
-          <label for="inputEmail4" class="form-label">Nombre de equipo</label>
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Numero de Empleado</label>
           <input
             type="text"
             class="form-control"
@@ -160,7 +160,7 @@
           />
         </div>
         <div class="col-md-4">
-          <label for="inputPassword4" class="form-label">Numero de Serie</label>
+          <label for="inputPassword4" class="form-label">Nombre</label>
           <input
             type="text"
             class="form-control"
@@ -171,8 +171,8 @@
             [(ngModel)]="service.formData.nserie"
           />
         </div>
-        <div class="col-md-3">
-          <label for="inputAddress" class="form-label">Modelo</label>
+        <div class="col-md-5">
+          <label for="inputAddress" class="form-label">Apellidos</label>
           <input
             type="text"
             class="form-control"
@@ -183,8 +183,8 @@
             [(ngModel)]="service.formData.model"
           />
         </div>
-        <div class="col-md-6">
-          <label for="inputAddress2" class="form-label">IMEI</label>
+        <div class="col-md-3">
+          <label for="inputAddress2" class="form-label">Tel.:</label>
           <input
             type="text"
             class="form-control"
@@ -195,8 +195,8 @@
             [(ngModel)]="service.formData.imei"
           />
         </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Equipo Nuevo</label>
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Direccion.:</label>
           <input
             type="text"
             class="form-control"
@@ -206,23 +206,18 @@
             [(ngModel)]="service.formData.equipmentstock"
           />
         </div>
-        <div class="col-md-8">
-          <label for="inputState" class="form-label">Categoria:</label>
-          <select
-            id="inputState"
-            class="form-select"
-            name="category"
-            #category="ngModel"
-            [(ngModel)]="service.formData.category"
-          >
-            <option selected>Selecciona la categoria...</option>
-            <option>Pc-Desktop</option>
-            <option>Laptop</option>
-            <option>SmartPhone</option>
-            <option>Monitor</option>
-            <option>Impresora</option>
-          </select>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Correo.:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCity"
+            name="equipmentstock"
+            #equipmentstock="ngModel"
+            [(ngModel)]="service.formData.equipmentstock"
+          />
         </div>
+        
        <!-- <div class="col-md-4">
           <label for="inputZip" class="form-label"
             >Cantidad en Asignación</label
@@ -236,31 +231,41 @@
             [(ngModel)]="service.formData.allasigned"
           />
         </div>-->
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
-              Accesorios Asignados
-            </label>
-          </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Departamento:</label>
+          <select
+            id="inputState"
+            class="form-select"
+            name="departament"
+            #departament="ngModel"
+            [(ngModel)]="service.formDataU.departament"
+          >
+            <option selected>Selecciona rol...</option>
+            <option>301-Administrador</option>
+            <option>281-Usuario</option>
+            
+          </select>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="form-check"></div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label"
-              >Descripcion del equipo</label
+              ></label
             >
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              name="carctetis"
-              #carctetis="ngModel"
-              [(ngModel)]="service.formData.carctetis"
-            ></textarea>
-          </div>
-        </div>
-        <div class="col-12">
+            </div>
           <button type="submit" class="btn btn-dark" [disabled]="form.invalid">
-            Registrar
-          </button>
+            Registrar</button
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <button
+            type="reset"
+            class="btn btn-dark"
+            (click)="(resetForm)"
+            [disabled]="form.invalid"
+          >
+            Cancelar
+          </button> 
         </div>
       </form>
     </section>

@@ -64,12 +64,30 @@ body {
 }
 
 .controls {
+  background-image: url('/assets/img/Icon awesome-user-alt.png')  ;
+  background-size: 18px 18px ;
+  background-repeat: no-repeat;
+  background-position: left center;
   width: 100%;
   border: 1px solid #707070;
   margin-bottom: 35px;
-  padding: 11px 15px;
-  display: block;
-  background: rgb(255, 255, 255);
+  padding: 11px 20px;
+  display: block;  
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+}
+.controls1 {
+  background-image: url('/assets/img/Icon awesome-lock.png')  ;
+  background-size: 18px 18px ;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 100%;
+  border: 1px solid #707070;
+  margin-bottom: 35px;
+  padding: 11px 20px;
+  display: block;  
   font-size: 14px;
   border-radius: 4px;
   font-weight: bold;
