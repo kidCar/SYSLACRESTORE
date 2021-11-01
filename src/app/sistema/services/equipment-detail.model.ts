@@ -15,14 +15,14 @@ export class EquipmentAsignation {
   equipmentstock: null;
   allasigned: null;
 }
-export class UsersUpdate{
-  userid: number=0;
-  dni:null;
+export class UsersUpdates{
+  
+  dni:number=0;
   nameuser: null;
   sur_paternal: null;
   sur_maternal: null;
   direction: null;
-  tel: null;
+ // tel: null;
   email: null;
   departament: null;
   puesto: null;

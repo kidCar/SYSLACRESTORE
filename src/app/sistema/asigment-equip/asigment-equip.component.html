@@ -1,4 +1,4 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,7 +6,6 @@
 
     <!--<link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(panelprincipal)">-->
   </head>
-
   <body>
     <div>
       <section class="encabezado">
@@ -139,10 +138,10 @@
           <input
             type="hidden"
             name="userid"
-            [value]="service.formDataU.userid"
+            [value]="service.formDataU.dni"
           />
         </div>
-        <div class="col-12">
+       <!-- <div class="col-12">
           <label for="inputEmail4" class="form-label">Numero de Empleado</label>
           <input
             type="text"
@@ -158,7 +157,7 @@
             required
             [class.invalid]="dni.invalid && dni.touched"
           />
-        </div>
+        </div>-->
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label">Nombre:</label>
           <input
@@ -200,7 +199,7 @@
             [(ngModel)]="service.formDataU.sur_maternal"
           />
         </div>
-        <div class="col-md-6">
+       <!-- <div class="col-md-6">
           <label for="inputAddress2" class="form-label">Telefono:</label>
           <input
             type="text"
@@ -211,7 +210,7 @@
             #tel="ngModel"
             [(ngModel)]="service.formDataU.tel"
           />
-        </div>
+        </div>-->
         <div class="col-md-6">
           <label for="inputCity" class="form-label">Correo:</label>
           <input
@@ -273,7 +272,7 @@
             type="reset"
             class="btn btn-dark"
             (click)="(resetForm)"
-            [disabled]="form.invalid"
+            [disabled]="form.invalid"  
           >
             Cancelar
           </button> 
@@ -332,11 +331,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pd of service.list; let index = index">
+              <tr *ngFor="let pd of service.listU; let index = index">
                 <th cope="row">{{ index + 1 }}</th>
-                <th>{{ pd.equipmentId }}</th>
-                <td>{{ pd.name }}</td>
-                <td>{{ pd.model }}</td>
+                <th>{{ pd.userid }}</th>
+                <td>{{ pd.dni }}</td>
+                <td>{{ pd.nameuser }}</td>
                 <td>{{ pd.nserie }}</td>
                 <td>{{ pd.category }}</td>
                 <td><a [href]="fileUrl" download="QRCode.txt">

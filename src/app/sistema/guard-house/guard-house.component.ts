@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-panelprincipal',
-  templateUrl: './panelprincipal.component.html',
-  styleUrls: ['./panelprincipal.component.css'],
+  selector: 'app-guard-house',
+  templateUrl: './guard-house.component.html',
+  styleUrls: ['./guard-house.component.css']
 })
-export class PanelprincipalComponent implements OnInit {
-  panelprincipal: string;
+export class GuardHouseComponent implements OnInit {
+
   constructor(public sanitizer: DomSanitizer, private activatedRoute: ActivatedRoute, private router: Router) {
     
-  }
-
-  
+  }  
   ngOnInit(): void {
     this.desplegarBarra();
     this.activatedRoute.paramMap.subscribe(params => {

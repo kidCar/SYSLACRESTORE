@@ -49,13 +49,14 @@ export class PersonalControlComponent implements OnInit {
     }
     
     insertRecord(form: NgForm) {
-      this.service.postPaymentDetail().subscribe(
+      this.service.postUserAsigment().subscribe(
         res => {
           this.resetForm(form);
           this.service.refreshList();
         },
         err => { console.log(err); }
       )
+      console.table(form.value)
     }
     //
     onDelete(id:number) {

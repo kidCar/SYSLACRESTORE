@@ -29,7 +29,7 @@ export class AsigmentEquipComponent implements OnInit {
     
   }
   onSubmit(form: NgForm) {
-    if (this.service.formData.equipmentId == 0)
+    if (this.service.formDataU.dni == 0)
       this.insertRecord(form);     
     else
       this.updateRecord(form);
@@ -47,9 +47,8 @@ export class AsigmentEquipComponent implements OnInit {
     )  ;  
   }
   
-  insertRecord(form: NgForm) { 
-      
-    this.service.postPaymentDetail().subscribe(
+  insertRecord(form: NgForm) {       
+    this.service.postUserAsigment().subscribe(
       res => {
         this.resetForm(form);
        
@@ -57,9 +56,7 @@ export class AsigmentEquipComponent implements OnInit {
       },
       err => { console.log(err); }
     );
-
-    console.table(form.value)
-    
+    console.table(form.value)    
   }
   //
   onDelete(id: number) {

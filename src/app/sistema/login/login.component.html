@@ -16,8 +16,9 @@
               <h5> Inicio de Sesíon</h5>
               <input  class="controls" type="email" name="usuario" value="" placeholder="Direccion de Correo"/>
               <input class="controls1" type="password" name="contrasena" value="" placeholder="Contraseña"/>    
-              <a href="#" routerLink="/panel-principal"><input class="buttons" type="submit" name="" value="Ingresar" id="id"></a>   
-              <!--<button class="buttons" (click)="goToRuta2"> Ingresar</button>-->
+              <!-- <a routerLink="panel-principal"><input class="buttons" type="submit" name="" value="Ingresar" id="id"></a> 
+              https://getbootstrap.com/docs/5.1/forms/floating-labels/-->   
+              <button class="buttons" type="button" (click)="goToRuta2()" > Ingresar</button>
        </section>  
     </div> 
 </body> 

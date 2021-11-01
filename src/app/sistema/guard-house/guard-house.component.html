@@ -8,12 +8,13 @@
   </head>
 
   <body>
-    <div >
-      <section class="encabezado" > <!-- Encabezado de loggin-->
-          <h4> Control de Inventario Fijo EISLA </h4>
-          <img src="assets/img/Elkay.png" class="encabezadoimagen">
-          </section>           
-  </div> 
+    <div>
+      <section class="encabezado">
+        <!-- Encabezado de loggin-->
+        <h4>Control de Inventario Fijo EISLA</h4>
+        <img src="assets/img/Elkay.png" class="encabezadoimagen" />
+      </section>
+    </div>
     <!--Panel desplegable-->
     <div id="sidemenu" class="menu-collapsed">
       <!--HEADER-->
@@ -104,14 +105,92 @@
               <div class="icon">
                 <img src="assets/img/Icon material-security.png" alt="" />
               </div>
-              <div   class="title"><span>Caseta de Vigilancia</span></div>
+              <div class="title"><span>Caseta de Vigilancia</span></div>
             </a>
           </div>
           <div class="item separator"></div>
         </div>
       </div>
     </div>
-    <div></div>
     
+    <section class="container">
+      <h1><h6 class="text-center">Escanear Codigo QR</h6></h1>
+      <h4>
+        Ingresa Código &nbsp;       
+        <div class="col-sm-3">
+          <label class="visually-hidden" for="autoSizingInput">Name</label>
+          <input type="text" class="form-control" id="autoSizingInput" placeholder="Codigo..">
+        </div>
+      </h4>
+      <div class="codigoqr"></div>
+      <div class="imagen"><img class="img-centro" src="assets/img/Icon material-add-a-photo.png" alt=""> </div>
+      
+    </section>
+    <p></p>
+    <div class="card w-75">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h3>Equipo Registrado</h3>
+        <a type="submit" class="btn btn-dark float-right" >Generar Reporte</a>
+      </div>
+    <div class="card-body text-center">
+      <section>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">N.lista</th>
+              <th scope="col"></th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Equipo</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Hora de registro</th>
+              <th scope="col">Estauts</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+           <!-- <tr *ngFor="let pd of service.list; let index = index">
+              <th cope="row" ><img src="assets/img/Icon material-computer.png" alt="" />{{ index + 1 }}</th>
+              <th>{{ pd.equipmentId }}</th>
+              <td>{{ pd.name }}</td>
+              <td>{{ pd.model }}</td>
+              <td>{{ pd.nserie }}</td>
+              <td>{{ pd.category }}</td>
+              <td>
+                <a [href]="fileUrl" download="QRCode.txt">
+                  <qrcode
+                    #codigoqr
+                    [qrdata]="'' + pd.equipmentId"
+                    [size]="256"
+                    [level]="'M'"
+                  ></qrcode>
+                </a>
+              </td>
+              <td>{{ pd.imei }}</td>
+              <td>{{ pd.equipmentstock }}</td>
+              <td><a href="/registro-equipo">ver codigo</a></td>
+              <!--omtimos caractristicas <td>{{ pd.allasigned }}</td>
+                   <td>{{pd.carctetis}}</td>-->
+              <!--<td>
+                <i
+                  type="submit"
+                  (click)="populateForm(pd)"
+                  class="fas fa-pen"
+                ></i
+                >&nbsp;&nbsp;&nbsp;&nbsp;<i
+                  type="submit"
+                  (click)="onDelete(pd.equipmentId)"
+                  class="fas fa-trash"
+                ></i>
+              </td>
+            </tr>-->
+            <!--<td colspan="2">Larry the Bird</td>-->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
   </body>
-  </html>
+</html>

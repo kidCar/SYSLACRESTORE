@@ -5,6 +5,8 @@ import { EquipmentDetailService } from '../services/equipment-detail.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 
 @Component({
@@ -24,8 +26,7 @@ export class RegistroEquipoComponent implements OnInit {
 
   dataToString = JSON.stringify(this.data); */
     
-  constructor(
-    public service: EquipmentDetailService, 
+  constructor(public service: EquipmentDetailService, 
     private sanitizer: DomSanitizer) {}
 
   //Codigo QR generado
@@ -33,10 +34,10 @@ export class RegistroEquipoComponent implements OnInit {
 
   ngOnInit(): void {     
     this.lateralbar();
-
-    this.myAngularxQrCode = 'ID Equipo';  
+    //this.downloadPDF();
+    this.myAngularxQrCode = 'https://instagram.com/shop_kadamm?utm_medium=copy_link';  
     
-    const data = 'ID Equipo' ;      
+    const data = 'https://instagram.com/shop_kadamm?utm_medium=copy_link';      
     const blob = new Blob([data], { type: 'application/octet-stream' });
     this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
        
@@ -49,11 +50,17 @@ export class RegistroEquipoComponent implements OnInit {
     //   console.log("respuesta: "+ respuesta.body);
     // });
   }
+  public downloadPDF(): void {
+    const doc = new jsPDF();
+
+    doc.text('Hello world!', 10, 10);
+    doc.save('hello-world.pdf');
+  }
   resetForm(form: NgForm) {
     console.table(form.value);
-    form.form.reset();
-    this.service.formData = new EquipmentDetail(); 
-    this.service.formData.equipmentId=0;  
+    form.form.reset(); 
+    var post =this.service.formData.equipmentId= (0);
+  
   }
   onSubmit(form: NgForm) {
     if (this.service.formData.equipmentId == 0)
@@ -75,12 +82,10 @@ export class RegistroEquipoComponent implements OnInit {
     )  ;  
   }
   
-  insertRecord(form: NgForm) { 
-      
+  insertRecord(form: NgForm) {       
     this.service.postPaymentDetail().subscribe(
       res => {
-        this.resetForm(form);
-       
+        this.resetForm(form);       
         this.service.refreshList();
       },
       err => { console.log(err); }
@@ -116,4 +121,6 @@ export class RegistroEquipoComponent implements OnInit {
  activarEdicion(){  
   this.mostrarDAtos=true;//directiva *ngIf
  }  
+
+ 
 }

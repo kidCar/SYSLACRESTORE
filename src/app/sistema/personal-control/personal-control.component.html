@@ -1,4 +1,4 @@
-<!DOCTYPE html>>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -136,51 +136,51 @@
       >
         <div>
           <input
-            type="hidden"
-            vname="equipmentId"
-            [value]="service.formData.equipmentId"
+            type="number"
+            name="dni"
+            [value]="service.formDataU.dni"
           />
           <!--declaracion value-->
         </div>
-        <div class="col-12">
-          <label for="inputEmail4" class="form-label">Numero de Empleado</label>
+        <div class="col-md-4">
+          <label for="inputEmail4" class="form-label">Nombre de Empleado</label>
           <input
             type="text"
             class="form-control"
             id="inputEmail4"
-            placeholder="Nombre del equipo"
-            name="name"
-            #name="ngModel"
-            [(ngModel)]="service.formData.name"
+            placeholder="Nombre del Empleado"
+            name="nameuser"
+            #nameuser="ngModel"
+            [(ngModel)]="service.formDataU.nameuser"
             required
             maxlength="10"
             minlength="5"
             required
-            [class.invalid]="name.invalid && name.touched"
+            [class.invalid]="nameuser.invalid && nameuser.touched"
           />
         </div>
         <div class="col-md-4">
-          <label for="inputPassword4" class="form-label">Nombre</label>
+          <label for="inputPassword4" class="form-label">Apellido 1</label>
           <input
             type="text"
             class="form-control"
             placeholder="N.serie"
             id="inputPassword4"
-            name="nserie"
-            #nserie="ngModel"
-            [(ngModel)]="service.formData.nserie"
+            name="sur_paternal"
+            #sur_paternal="ngModel"
+            [(ngModel)]="service.formDataU.sur_paternal"
           />
         </div>
-        <div class="col-md-5">
-          <label for="inputAddress" class="form-label">Apellidos</label>
+        <div class="col-md-4">
+          <label for="inputAddress" class="form-label">Apellido 2</label>
           <input
             type="text"
             class="form-control"
             id="inputAddress"
             placeholder="Modelo"
-            name="model"
-            #model="ngModel"
-            [(ngModel)]="service.formData.model"
+            name="sur_maternal"
+            #sur_maternal="ngModel"
+            [(ngModel)]="service.formDataU.sur_maternal"
           />
         </div>
         <div class="col-md-3">
@@ -190,20 +190,19 @@
             class="form-control"
             id="inputAddress2"
             placeholder="imei del equipo"
-            name="imei"
-            #imei="ngModel"
-            [(ngModel)]="service.formData.imei"
+            name="imei"           
           />
         </div>
         <div class="col-md-4">
           <label for="inputCity" class="form-label">Direccion.:</label>
           <input
             type="text"
+            placeholder="Direccion"
             class="form-control"
             id="inputCity"
-            name="equipmentstock"
-            #equipmentstock="ngModel"
-            [(ngModel)]="service.formData.equipmentstock"
+            name="direction"
+            #direction="ngModel"
+            [(ngModel)]="service.formDataU.direction"
           />
         </div>
         <div class="col-md-6">
@@ -212,9 +211,9 @@
             type="text"
             class="form-control"
             id="inputCity"
-            name="equipmentstock"
-            #equipmentstock="ngModel"
-            [(ngModel)]="service.formData.equipmentstock"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="service.formDataU.email"
           />
         </div>
         
@@ -244,6 +243,23 @@
             <option>301-Administrador</option>
             <option>281-Usuario</option>
             
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Puesto :</label>
+          <select
+            id="inputState"
+            class="form-select"
+            name="puesto"
+            #puesto="ngModel"
+            [(ngModel)]="service.formDataU.puesto"
+          >
+            <option selected>Selecciona el puesto...</option>
+            <option>Gerenete</option>
+            <option>Direcctor</option>
+            <option>Coordinador</option>
+            <option>Practicante</option>
+            <option>Mas...</option>
           </select>
         </div>
         

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EquipmentDetail, UsersUpdate } from './equipment-detail.model';
+import { EquipmentDetail, UsersUpdates } from './equipment-detail.model';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -8,17 +8,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EquipmentDetailService {
-  readonly baseURL = 'https://localhost:44346/api/EquipmentDetail';
+  readonly baseURL = 'https://localhost:44346/api/EquipmentDetails';
+  readonly baseURLU = 'https://localhost:44346/api/UsersUpdates';
   formData: EquipmentDetail = new EquipmentDetail();
-  formDataU: UsersUpdate = new UsersUpdate();
+  formDataU: UsersUpdates = new UsersUpdates();
   list: EquipmentDetail[];
-  listU: UsersUpdate[];
+  listU: UsersUpdates[];
   
   constructor(private http: HttpClient) {}
-
+  //postEquipo
   postPaymentDetail() {
     return this.http.post(this.baseURL, this.formData);
   }
+  //postUsuarios
+  postUserAsigment() {
+    return this.http.post(this.baseURLU, this.formDataU);
+  }
+  
   /*putPaymentDetail() {
     return this.http.put(
       `${this.baseURL}/${this.formData.equipmentDetailId}`, this.formData);
@@ -53,7 +59,5 @@ export class EquipmentDetailService {
   }
 
   //registros de usuarios
-  postPaymentDetailUser() {
-    return this.http.post(this.baseURL, this.formData);
-  }
+  
 }

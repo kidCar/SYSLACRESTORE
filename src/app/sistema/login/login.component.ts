@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute){
     
   }
-  goToRuta2(id: number){
-    this.router.navigate(['/panelprincipal', id,]);
+  goToRuta2(){
+    this.router.navigate(['/panel-principal'])
   }
 
 }

@@ -16,6 +16,7 @@ import { QRCodeElementType } from 'angularx-qrcode';
 import { QRCodeModule } from 'angularx-qrcode';
 import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.component';
 import { GeneralReportComponent } from './sistema/general-report/general-report.component';
+import { GuardHouseComponent } from './sistema/guard-house/guard-house.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GeneralReportComponent } from './sistema/general-report/general-report.
     EquipmentDetailsComponent,
     PersonalControlComponent,
     AsigmentEquipComponent,
-    GeneralReportComponent,   
+    GeneralReportComponent,
+    GuardHouseComponent,   
     //EquipmentDetailsComponent
   ],
   imports: [

@@ -8,6 +8,7 @@ import { EquipmentDetailsComponent } from './sistema/equipment-details/equipment
 import { PersonalControlComponent } from './sistema/personal-control/personal-control.component';
 import { GeneralReportComponent } from './sistema/general-report/general-report.component';
 import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.component';
+import { GuardHouseComponent } from './sistema/guard-house/guard-house.component';
 
 const app_routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,7 @@ const app_routes: Routes = [
   { path: 'personal-control', component: PersonalControlComponent },
   { path: 'reportes-equipo', component: GeneralReportComponent },
   { path: 'asignacion-de-equipo', component: AsigmentEquipComponent },
+  { path: 'caseta-vigilancia', component: GuardHouseComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 export const app_routing = RouterModule.forRoot(app_routes);
