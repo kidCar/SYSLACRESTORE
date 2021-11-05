@@ -122,5 +122,13 @@ export class RegistroEquipoComponent implements OnInit {
   this.mostrarDAtos=true;//directiva *ngIf
  }  
 
+  mostrarRegistros(): void{
+  document.getElementById('Muestra').style.display ='block';
+  document.getElementById('tabla').style.display ='none';
+}
+mostrarLista(): void{
+    document.getElementById('tabla').style.display ='block';
+    document.getElementById('Muestra').style.display ='none';
+}
  
 }
