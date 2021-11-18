@@ -124,16 +124,11 @@
       <h6 class="text-center" type="submit" (click)="mostrarRegistros()">
         Registrar
       </h6>
-     </div>
-     <div id="element2">
-      <h6 class="text-center" type="submit" (click)="mostrarLista()">Lista</h6>
-     
-     </div>
-    <div>
-      
-
-      
     </div>
+    <div id="element2">
+      <h6 class="text-center" type="submit" (click)="mostrarLista()">Lista</h6>
+    </div>
+    <div></div>
     <h1 class="basica2"></h1>
     <div class="lineasdereg"></div>
     <section class="container" id="Muestra">
@@ -366,7 +361,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let pd of service.list; let index = index">
+              <tr *ngFor="let pd of service.list |  paginate: { itemsPerPage: 3, currentPage: p }; let index = index ">
                 <th cope="row">
                   <img src="assets/img/Icon material-computer.png" alt="" />{{
                     index + 1
@@ -379,13 +374,7 @@
                 <td>{{ pd.category }}</td>
                 <td>
                   <a [href]="fileUrl" download="QRCode.txt">
-                    <qrcode
-                      #codigoqr
-                      [qrdata]="'' + pd.equipmentId"
-                      [size]="256"
-                      [level]="'M'"
-                    ></qrcode>
-                  </a>
+                    <qrcode #codigoqr [qrdata]="'' + pd.nserie"  [size]="256"   [level]="'M'" ></qrcode>           </a>
                 </td>
                 <td>{{ pd.imei }}</td>
                 <td>{{ pd.equipmentstock }}</td>
@@ -396,18 +385,15 @@
                   <i
                     type="submit"
                     (click)="populateForm(pd)"
+                    (click)="mostrarRegistros()"
                     class="fas fa-pen"
-                  ></i
-                  >&nbsp;&nbsp;&nbsp;&nbsp;<i
-                    type="submit"
-                    (click)="onDelete(pd.equipmentId)"
-                    class="fas fa-trash"
-                  ></i>
+                  ></i>&nbsp;&nbsp;&nbsp;&nbsp;<i type="submit" (click)="onDelete(pd.equipmentId)" class="fas fa-trash"></i>
                 </td>
               </tr>
               <!--<td colspan="2">Larry the Bird</td>-->
             </tbody>
           </table>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </section>
       </div>
     </div>

@@ -17,6 +17,9 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { AsigmentEquipComponent } from './sistema/asigment-equip/asigment-equip.component';
 import { GeneralReportComponent } from './sistema/general-report/general-report.component';
 import { GuardHouseComponent } from './sistema/guard-house/guard-house.component';
+//Modulo para trabajar con paguinacion
+import {NgxPaginationModule} from 'ngx-pagination'; 
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { GuardHouseComponent } from './sistema/guard-house/guard-house.component
     PersonalControlComponent,
     AsigmentEquipComponent,
     GeneralReportComponent,
-    GuardHouseComponent,   
+    GuardHouseComponent,
+    
     //EquipmentDetailsComponent
   ],
   imports: [
@@ -38,7 +42,7 @@ import { GuardHouseComponent } from './sistema/guard-house/guard-house.component
     FormsModule,
     HttpClientModule,
     QRCodeModule,
-    
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

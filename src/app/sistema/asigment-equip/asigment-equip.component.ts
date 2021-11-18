@@ -50,9 +50,9 @@ export class AsigmentEquipComponent implements OnInit {
   insertRecord(form: NgForm) {       
     this.service.postUserAsigment().subscribe(
       res => {
-        this.resetForm(form);
-       
+        this.resetForm(form);       
         this.service.refreshList();
+        
       },
       err => { console.log(err); }
     );
@@ -60,7 +60,7 @@ export class AsigmentEquipComponent implements OnInit {
   }
   //
   onDelete(id: number) {
-    if (confirm('Desea eliminar/cultar el equipo?')) {
+    if (confirm('Desea eliminar/cultar el equipo?')) {      
       this.service.deletePaymentDetail(id)
         .subscribe(res => {
           this.service.refreshList();          

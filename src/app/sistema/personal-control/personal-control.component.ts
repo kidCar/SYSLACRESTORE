@@ -71,4 +71,14 @@ export class PersonalControlComponent implements OnInit {
     populateForm(selectedRecord) {
       this.service.formData = Object.assign({}, selectedRecord);
     }
+
+    //Mostrar y ocultar tablas
+    mostrarRegistros(): void {
+      document.getElementById('Muestra').style.display = 'block';
+      document.getElementById('tabla').style.display = 'none';
+    }
+    mostrarLista(): void {
+      document.getElementById('tabla').style.display = 'block';
+      document.getElementById('Muestra').style.display = 'none';
+    }
   }

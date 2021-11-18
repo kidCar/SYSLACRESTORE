@@ -1,10 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  
-   background: url('assets/img/Grupo39.jpg');
-    background-size: cover;
-    font-family: Arial;
-    height: 100vh;
-    
-  }
-  
+  background: url("assets/img/Grupo39.jpg");
+  background-size: cover;
+  font-family: Arial;
+}
+.menu-expanded {
+  width: 220px;
+  box-shadow: 0 0 10px black;
+  transition-duration: 1s;
+}
+.menu-collapsed {
+  width: 48px;
+  transition-duration: 1s;
+}

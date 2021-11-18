@@ -7,6 +7,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 @Component({
@@ -17,6 +18,8 @@ import html2canvas from 'html2canvas';
 export class RegistroEquipoComponent implements OnInit {
   public myAngularxQrCode: string = null;
   public fileUrl;
+  p: number = 1;
+ 
   /* data = [{
     'name': 'John Doe',
     'profile': 'Software Developer',
@@ -25,26 +28,31 @@ export class RegistroEquipoComponent implements OnInit {
   }]
 
   dataToString = JSON.stringify(this.data); */
-    
-  constructor(public service: EquipmentDetailService, 
-    private sanitizer: DomSanitizer) {}
+
+  constructor(
+    public service: EquipmentDetailService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   //Codigo QR generado
-  mostrarDAtos:Boolean;
+  mostrarDAtos: Boolean;
 
-  ngOnInit(): void {     
+  ngOnInit(): void {
     this.lateralbar();
     //this.downloadPDF();
-    this.myAngularxQrCode = 'https://instagram.com/shop_kadamm?utm_medium=copy_link';  
-    
-    const data = 'https://instagram.com/shop_kadamm?utm_medium=copy_link';      
+    this.myAngularxQrCode =
+      'https://instagram.com/shop_kadamm?utm_medium=copy_link';
+
+    const data = 'https://instagram.com/shop_kadamm?utm_medium=copy_link';
     const blob = new Blob([data], { type: 'application/octet-stream' });
-    this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
-       
-    //this.myAngularxQrCode ='you Qr code';    
+    this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      window.URL.createObjectURL(blob)
+    );
+
+    //this.myAngularxQrCode ='you Qr code';
     //Obtener lista desde el ng
-    //this.service.refreshList();  
-    //barra lateral ocultar 
+    //this.service.refreshList();
+    //barra lateral ocultar
     // this.service.ObtenerRegistros()
     // .subscribe((respuesta : HttpResponse<EquipmentDetail[]>) => {
     //   console.log("respuesta: "+ respuesta.body);
@@ -58,77 +66,88 @@ export class RegistroEquipoComponent implements OnInit {
   }
   resetForm(form: NgForm) {
     console.table(form.value);
-    form.form.reset(); 
-    var post =this.service.formData.equipmentId= (0);
-  
+    form.form.reset();
+    var post = (this.service.formData.equipmentId = 0);
   }
   onSubmit(form: NgForm) {
-    if (this.service.formData.equipmentId == 0)
-      this.insertRecord(form);     
-    else
-      this.updateRecord(form);
+    if (this.service.formData.equipmentId == 0) this.insertRecord(form);
+    else this.updateRecord(form);
   }
-  
+
   updateRecord(form: NgForm) {
-    
     this.service.putPaymentDetail().subscribe(
-      res => {
-        this.resetForm(form);        
-        this.service.refreshList();        
-      },
-      err => {
-        console.log(err);
-      }
-    )  ;  
-  }
-  
-  insertRecord(form: NgForm) {       
-    this.service.postPaymentDetail().subscribe(
-      res => {
-        this.resetForm(form);       
+      (res) => {
+        this.resetForm(form);
         this.service.refreshList();
       },
-      err => { console.log(err); }
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  insertRecord(form: NgForm) {
+    this.service.postPaymentDetail().subscribe(
+      (res) => {
+       // this.alerta();
+        this.resetForm(form);
+        this.service.refreshList();
+        
+      },
+      (err) => {
+        console.log(err);
+      }
     );
 
-    console.table(form.value)
-    
+    console.table(form.value);
   }
   //
   onDelete(id: number) {
     if (confirm('Desea eliminar/cultar el equipo?')) {
-      this.service.deletePaymentDetail(id)
-        .subscribe(res => {
-          this.service.refreshList();          
+      this.service.deletePaymentDetail(id).subscribe(
+        (res) => {
+          this.service.refreshList();
         },
-        err => { console.log(err); })
+        (err) => {
+          console.log(err);
+        }
+      );
     }
   }
-  populateForm(pd:EquipmentDetail) {
+  populateForm(pd: EquipmentDetail) {
     this.service.formData = Object.assign({}, pd);
-    console.table(pd)
+    console.table(pd);
   }
- lateralbar(){
-  const btn = document.querySelector('#menu-btn');
-  const menu = document.querySelector('#sidemenu');
-  btn.addEventListener('click', (e) => {
-    menu.classList.toggle('menu-expanded');
-    menu.classList.toggle('menu-collapsed');
-    document.querySelector('body').classList.toggle('body-expanded');
-  });
-  this.service.refreshList();  
- }
- activarEdicion(){  
-  this.mostrarDAtos=true;//directiva *ngIf
- }  
+  lateralbar() {
+    const btn = document.querySelector('#menu-btn');
+    const menu = document.querySelector('#sidemenu');
+    btn.addEventListener('click', (e) => {
+      menu.classList.toggle('menu-expanded');
+      menu.classList.toggle('menu-collapsed');
+      document.querySelector('body').classList.toggle('body-expanded');
+    });
+    this.service.refreshList();
+  }
+  activarEdicion() {
+    this.mostrarDAtos = true; //directiva *ngIf
+  }
 
-  mostrarRegistros(): void{
-  document.getElementById('Muestra').style.display ='block';
-  document.getElementById('tabla').style.display ='none';
-}
-mostrarLista(): void{
-    document.getElementById('tabla').style.display ='block';
-    document.getElementById('Muestra').style.display ='none';
-}
- 
+  mostrarRegistros(): void {
+    document.getElementById('Muestra').style.display = 'block';
+    document.getElementById('tabla').style.display = 'none';
+  }
+  mostrarLista(): void {
+    document.getElementById('tabla').style.display = 'block';
+    document.getElementById('Muestra').style.display = 'none';
+  }
+  alerta() {
+    var mensaje;
+    var opcion = confirm('Regristro Agregado');
+    if (opcion == true) {
+      mensaje = 'Has clickado OK';
+    } else {
+      mensaje = 'Has clickado Cancelar';
+    }
+    document.getElementById('ejemplo').innerHTML = mensaje;
+  }
 }

@@ -33,4 +33,13 @@ export class GuardHouseComponent implements OnInit {
   goToRutaGuard(){
     this.router.navigate(['/caseta-vigilancia'])
   }
+  //Mostrar Forms
+  mostrarRegistros(): void {
+    document.getElementById('Muestra').style.display = 'block';
+    document.getElementById('tabla').style.display = 'none';
+  }
+  mostrarLista(): void {
+    document.getElementById('tabla').style.display = 'block';
+    document.getElementById('Muestra').style.display = 'none';
+  }
 }
